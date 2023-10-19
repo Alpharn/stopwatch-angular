@@ -1,9 +1,9 @@
 <div class="timer">
   <div class="display">
-    {{ formattedTime }}
+    {{ secondsPassed * 1000 | date : 'HH:mm:ss' : 'UTC' }}
   </div>
   <div class="btn-group">
-    <button mat-flat-button color="primary" startButton>{{ startButtonText }}</button>
+    <button mat-flat-button color="primary" startButton>{{ isRunning ? "Stop" : "Start"  }}</button>
     <button mat-flat-button color="accent" waitButton>Wait</button>
     <button mat-flat-button color="warn" resetButton>Reset</button>
   </div>
